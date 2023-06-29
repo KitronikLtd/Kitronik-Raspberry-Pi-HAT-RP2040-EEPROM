@@ -1,0 +1,47 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835";
+
+    fragment@0 {
+        target = <&gpio>;
+
+        __overlay__ {
+            audio_pwm: audio_pwm {
+                label = "audio_pwm";
+                brcm,pins = <26>;
+                brcm,function = <1>;
+                status = "okay";
+            };
+            
+            servo_pwm: servo_pwm {
+                label = "servo_pwm";
+                brcm,pins = <6>;
+                brcm,function = <1>;
+                status = "okay";
+            };
+
+            high_power_out_1: high_power_out_1 {
+                label = "high_power_out_1";
+                brcm,pins = <13>;
+                brcm,function = <1>;
+                status = "okay";
+            };
+
+            high_power_out_2: high_power_out_2 {
+                label = "high_power_out_2";
+                brcm,pins = <19>;
+                brcm,function = <1>;
+                status = "okay";
+            };
+
+            general_io: general_io {
+                label = "general_io";
+                brcm,pins = <22 23 24>;
+                brcm,function = <1>;
+                status = "okay";
+            };
+        };
+    };
+};
